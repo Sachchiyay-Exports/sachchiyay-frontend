@@ -31,7 +31,7 @@ const Products = () => {
   // State for the GENERAL Inquiry Modal (if used via Navbar link)
   const [isGeneralModalOpen, setIsGeneralModalOpen] = useState(false); 
 
-  const openGeneralModal = () => setIsGeneralModalOpen(true);
+  // const openGeneralModal = () => setIsGeneralModalOpen(true);
   const closeGeneralModal = () => setIsGeneralModalOpen(false);
 
   // CRITICAL FIX: Direct Redirect Handler for Product Inquiry Button
