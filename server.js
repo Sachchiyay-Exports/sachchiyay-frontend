@@ -1,31 +1,37 @@
-// backend/server.js
 const express = require('express');
-
-// ... other requires ...
+const dotenv = require('dotenv');
 const cors = require('cors');
 const asyncHandler = require('express-async-handler');
-const sgMail = require('@sendgrid/mail'); // ⬅️ NEW: SendGrid library
-const dotenv = require('dotenv');
+const mongoose = require('mongoose'); // Assuming this is needed for MongoDB connection
+const sgMail = require('@sendgrid/mail'); // SendGrid Mailer
 
 // Load environment variables (from standard .env file)
-//dotenv.config();
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// ⬅️ NEW: Set the SendGrid API Key once upon startup
-// This uses the SENDGRID_API_KEY you set in Render's environment variables.
+// --- SendGrid Configuration ---
+// This uses the SENDGRID_API_KEY environment variable.
 if (process.env.SENDGRID_API_KEY) {
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     console.log("SendGrid API Key successfully loaded.");
 } else {
+    // This will now crash the application if the key is missing, ensuring fast feedback.
     console.error("SENDGRID_API_KEY is NOT set. Email sending will fail.");
 }
 
 // Middleware
-// ... existing middleware ...
+app.use(cors({
+    // Uses FRONTEND_URL to handle CORS for your Vercel site
+    origin: ['http://localhost:3000', process.env.FRONTEND_URL], 
+    credentials: true,
+})); 
+app.use(express.json()); // To handle JSON bodies
+app.use(express.urlencoded({ extended: true })); // To handle URL-encoded data
 
-// --- Inquiry Submission Route ---
+
+// --- Inquiry Submission Route (Using SendGrid) ---
 app.post('/api/inquiries', asyncHandler(async (req, res) => {
     // Data received from the React InquiryForm component
     const { name, email, contactNumber, subject, remark } = req.body;
@@ -36,7 +42,6 @@ app.post('/api/inquiries', asyncHandler(async (req, res) => {
         throw new Error('Missing required fields: Name, Email, and Contact Number.');
     }
 
-    // ⬅️ MODIFIED: Simplified email sending using SendGrid
     const msg = {
         // Use the verified sender email from your Render variables
         to: process.env.RECIPIENT_EMAIL || 'sachchiyayexports@gmail.com', 
@@ -55,6 +60,7 @@ app.post('/api/inquiries', asyncHandler(async (req, res) => {
     };
 
     // Send the email and wait for the API response
+    // The previous error was crashing the server here because the package wasn't installed.
     await sgMail.send(msg); 
     console.log('Email sent successfully via SendGrid API!');
 
@@ -64,4 +70,8 @@ app.post('/api/inquiries', asyncHandler(async (req, res) => {
     });
 }));
 
-// ... rest of your code ...
+// Default API route for health checks
+app.get('/', (req, res) => res.send('Sachchiyay Exports API is running and ready for inquiries...'));
+
+// Start the server
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
