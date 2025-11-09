@@ -38,18 +38,18 @@ const inquiryButtonStyle = {
 const Products = () => {
   const navigate = useNavigate(); 
   const [isGeneralModalOpen, setIsGeneralModalOpen] = useState(false); // State for the GENERAL Inquiry Modal
-  const [selectedProduct, setSelectedProduct] = useState(null); // State for the Product Details Modal
+  // const [selectedProduct, setSelectedProduct] = useState(null); // State for the Product Details Modal
 
-  const openGeneralModal = () => setIsGeneralModalOpen(true);
+  // const openGeneralModal = () => setIsGeneralModalOpen(true);
   const closeGeneralModal = () => setIsGeneralModalOpen(false);
   
   // Handlers for the new Product Details Modal
   const openProductDetailsModal = (product) => {
-      setSelectedProduct(product);
+      // setSelectedProduct(product);
   }
-  const closeProductDetailsModal = () => {
-      setSelectedProduct(null);
-  }
+  // const closeProductDetailsModal = () => {
+      // setSelectedProduct(null);
+  // }
 
   // Handler for "View All" button
   const handleViewAll = () => {
@@ -64,8 +64,8 @@ const Products = () => {
       <div className="product-list">
         {productData.map((product, index) => {
           
-          const whatsappMessage = encodeURIComponent(Hello Sachchiyay Exports, I am interested in placing an inquiry for **${product.name}**.);
-          const whatsappLink = https://wa.me/916353395275?text=${whatsappMessage};
+          const whatsappMessage = encodeURIComponent(`Hello Sachchiyay Exports, I am interested in placing an inquiry for **${product.name}**.`);
+          const whatsappLink = `https://wa.me/916353395275?text=${whatsappMessage}`;
           
           return (
             <div 
