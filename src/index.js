@@ -1,84 +1,12 @@
-// src/index.js
-/* eslint-disable no-unused-vars */
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './index.css'; // Assuming your styles are here
 
-// --- SLIDER FUNCTIONALITY ---
-let slideIndex = 0;
-
-document.addEventListener("DOMContentLoaded", () => {
-  showSlides();
-  autoSlideShow();
-});
-
-// Manual controls
-// FIX: Expose functions globally to satisfy 'no-unused-vars' rule
-window.plusSlides = function(n) {
-  slideIndex += n;
-  showSlides();
-}
-
-window.currentSlide = function(n) {
-  slideIndex = n - 1;
-  showSlides();
-}
-
-// Show Slides
-function showSlides() {
-  const slides = document.getElementsByClassName("slide");
-  const dots = document.getElementsByClassName("dot");
-
-  if (slides.length === 0) return;
-
-  if (slideIndex >= slides.length) slideIndex = 0;
-  if (slideIndex < 0) slideIndex = slides.length - 1;
-
-  for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
-  for (let i = 0; i < dots.length; i++) dots[i].classList.remove("active");
-
-  slides[slideIndex].style.display = "block";
-  dots[slideIndex].classList.add("active");
-}
-
-// Auto Slide
-function autoSlideShow() {
-  slideIndex++;
-  showSlides();
-  setTimeout(autoSlideShow, 5000);
-}
-
-// Scroll to Top Button
-const scrollTopBtn = document.getElementById("scrollTopBtn");
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 200) scrollTopBtn.classList.add("show");
-  else scrollTopBtn.classList.remove("show");
-});
-scrollTopBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-// Navbar Scroll Effect
-window.addEventListener("scroll", () => {
-  const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 50) navbar.classList.add("scrolled");
-  else navbar.classList.remove("scrolled");
-});
-
-// Mobile Menu Toggle
-const menuToggle = document.getElementById("menu-toggle");
-const navMenu = document.getElementById("nav-menu");
-menuToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("open");
-});
-
-const productToggle = document.getElementById("product-toggle");
-const productDropdown = document.getElementById("product-dropdown");
-
-productToggle.addEventListener("click", (e) => {
-  e.preventDefault();
-  productDropdown.classList.toggle("show");
-});
-
-document.addEventListener("click", (e) => {
-  if (!productToggle.contains(e.target) && !productDropdown.contains(e.target)) {
-    productDropdown.classList.remove("show");
-  }
-});
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+// ALL manual JS logic for sliders/navbar/modal MUST be gone from this file.
