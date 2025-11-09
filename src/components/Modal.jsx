@@ -1,13 +1,11 @@
-// src/components/Modal.jsx
 import React from 'react';
 
-// NOTE: Paste your actual Google Form Embed URL here
-const GOOGLE_FORM_URL = 'https://forms.gle/vm26sTt4ExFc7cYN6'; 
+// PASTE YOUR GOOGLE FORM EMBED URL HERE!
+const GOOGLE_FORM_URL = 'https://forms.gle/vm26sTt4ExFc7cYN6';  
 
 const Modal = ({ isOpen, closeModal, product }) => {
     if (!isOpen) return null;
 
-    // Default values if product details aren't passed perfectly
     const currentProduct = product || { name: 'Product Inquiry', description: 'Please fill out the form below.' };
 
     return (
