@@ -1,29 +1,31 @@
 // src/components/Modal.jsx
 import React from 'react';
 
-// NOTE: Replace YOUR_GOOGLE_FORM_EMBED_URL_HERE with your actual form URL
+// NOTE: Paste your actual Google Form Embed URL here
 const GOOGLE_FORM_URL = 'https://forms.gle/vm26sTt4ExFc7cYN6'; 
 
 const Modal = ({ isOpen, closeModal, product }) => {
     if (!isOpen) return null;
 
-    // This is placeholder logic based on your previous product modals
+    // Default values if product details aren't passed perfectly
     const currentProduct = product || { name: 'Product Inquiry', description: 'Please fill out the form below.' };
 
     return (
         <div className="modal" style={{ display: isOpen ? 'flex' : 'none' }}>
             <div className="modal-content">
                 <div className="modal-header">
-                    <h3>Product Details: {currentProduct.name}</h3>
+                    <h3>Product Inquiry: {currentProduct.name}</h3>
                     <button className="close-button" onClick={closeModal}>&times;</button>
                 </div>
                 
+                {/* Info about the product being inquired about */}
                 <div style={{ padding: '20px' }}>
-                    <h4>{currentProduct.description}</h4>
+                    <h4>Product: {currentProduct.name}</h4>
+                    <p>{currentProduct.description}</p>
                 </div>
 
                 <div className="modal-header" style={{ backgroundColor: '#4A2613', color: '#fff', borderTop: '1px solid #E2B04A' }}>
-                    <h3>Submit Your Inquiry via Google Forms</h3>
+                    <h3>Submit Inquiry via Google Forms</h3>
                 </div>
 
                 {/* CRITICAL FIX: EMBED GOOGLE FORM VIA IFRAME IN MODAL */}
@@ -46,7 +48,6 @@ const Modal = ({ isOpen, closeModal, product }) => {
                 <div className="modal-footer" style={{ justifyContent: 'center' }}>
                     <button onClick={closeModal} className="btn-cancel">Close</button>
                 </div>
-
             </div>
         </div>
     );
