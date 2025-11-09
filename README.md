@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -72,3 +73,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 =======
 # sachchiyay-api
 >>>>>>> 125a68449358082e100c30c8a3ada8a223d5f7f0
+=======
+# sachchiyay-frontend
+>>>>>>> 74ddd3606fdb0f3b40c38d3541dcc1491cb09667
