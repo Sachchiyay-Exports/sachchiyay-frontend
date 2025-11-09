@@ -1,10 +1,20 @@
 // src/components/InquiryForm.jsx
 import React from 'react';
 
+<<<<<<< HEAD
 // PASTE YOUR ACTUAL GOOGLE FORM EMBED URL HERE!
 const GOOGLE_FORM_URL = 'https://forms.gle/vm26sTt4ExFc7cYN6'; 
 
 const InquiryForm = () => {
+=======
+// PASTE YOUR GOOGLE FORM EMBED URL HERE!
+const GOOGLE_FORM_URL = 'https://forms.gle/vm26sTt4ExFc7cYN6'; 
+
+const InquiryForm = () => {
+    
+    // The previous form submission logic is completely removed, using the iframe instead.
+
+>>>>>>> 1626fd3dec1bfd4691c08afa1b8ac69b2d471a8f
     return (
         <section className="inquiry-form" id="inquiry-form-section">
             <h2>Inquiry Form</h2>
@@ -25,7 +35,12 @@ const InquiryForm = () => {
                     Loading...
                 </iframe>
             </div>
+<<<<<<< HEAD
             {/* The old functional form has been removed entirely. */}
+=======
+            {/* END CRITICAL FIX */}
+            
+>>>>>>> 1626fd3dec1bfd4691c08afa1b8ac69b2d471a8f
         </section>
     );
 };

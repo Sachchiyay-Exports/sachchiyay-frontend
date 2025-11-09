@@ -1,3 +1,5 @@
+// src/index.js
+
 // --- SLIDER FUNCTIONALITY ---
 let slideIndex = 0;
 
