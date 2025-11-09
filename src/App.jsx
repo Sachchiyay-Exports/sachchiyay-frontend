@@ -13,7 +13,7 @@ import Products from './components/Products';
 import Gallery from './components/Gallery';
 import InquiryForm from './components/InquiryForm';
 import ContactDetails from './components/ContactDetails';
-import ProductsListPage from './components/ProductsListPage'; 
+// import ProductsListPage from './components/ProductsListPage'; 
 
 function App() {
   return (
@@ -42,7 +42,7 @@ function App() {
           } />
 
           {/* 3. DEDICATED PRODUCTS LIST PAGE (For "View All" button) */}
-          <Route path="/products" element={<ProductsListPage />} />
+          <Route path="/products" element={<Products/>} />
           
           {/* 4. DEDICATED GALLERY PAGE */}
           <Route path="/gallery" element={
