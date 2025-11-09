@@ -1,4 +1,5 @@
 // src/index.js
+/* eslint-disable no-unused-vars */
 
 // --- SLIDER FUNCTIONALITY ---
 let slideIndex = 0;
@@ -9,11 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Manual controls
-function plusSlides(n) {
+// FIX: Expose functions globally to satisfy 'no-unused-vars' rule
+window.plusSlides = function(n) {
   slideIndex += n;
   showSlides();
 }
-function currentSlide(n) {
+
+window.currentSlide = function(n) {
   slideIndex = n - 1;
   showSlides();
 }
