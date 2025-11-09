@@ -1,12 +1,12 @@
 // src/components/InquiryForm.jsx
 import React from 'react';
 
-// NOTE: Replace YOUR_GOOGLE_FORM_EMBED_URL_HERE with your actual form URL
-const GOOGLE_FORM_URL = 'https://forms.gle/vm26sTt4ExFc7cYN6'; 
+// NOTE: Paste your actual Google Form Embed URL here
+const GOOGLE_FORM_URL = https://forms.gle/vm26sTt4ExFc7cYN6'; 
 
 const InquiryForm = () => {
     
-    // The JavaScript submission logic is now removed.
+    // The previous form submission logic is completely removed.
 
     return (
         <section className="inquiry-form" id="inquiry-form-section">
