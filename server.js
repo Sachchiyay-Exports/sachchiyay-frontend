@@ -4,9 +4,10 @@ const express = require('express');
 const cors = require('cors');
 const asyncHandler = require('express-async-handler');
 const sgMail = require('@sendgrid/mail'); // ⬅️ NEW: SendGrid library
+const dotenv = require('dotenv');
 
 // Load environment variables (from standard .env file)
-dotenv.config();
+//dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
