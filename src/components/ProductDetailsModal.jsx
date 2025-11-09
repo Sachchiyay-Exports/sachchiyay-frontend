@@ -1,18 +1,22 @@
 // // src/components/ProductDetailsModal.jsx
 // import React from 'react';
 
-// const ProductDetailsModal = ({ isOpen, onClose, product, openGeneralModal }) => { 
+// // CRITICAL: PASTE YOUR ACTUAL GOOGLE FORM URL HERE!
+// const GOOGLE_FORM_URL = 'https://forms.gle/vm26sTt4ExFc7cYN6'; 
+
+// const ProductDetailsModal = ({ isOpen, onClose, product }) => { 
 //     if (!isOpen || !product) {
 //         return null;
 //     }
     
+//     // WhatsApp message setup
 //     const whatsappMessage = encodeURIComponent(`Hello Sachchiyay Exports, I am interested in your product: ${product.name}.`);
 //     const whatsappLink = `https://wa.me/916353395275?text=${whatsappMessage}`;
 
-//     // Handler for the Inquiry button inside the modal
-//     const handleInquiryClick = () => {
+//     // CRITICAL FIX: Handler redirects directly to Google Form
+//     const handleInquiryRedirect = () => {
 //         onClose(); 
-//         openGeneralModal(); 
+//         window.open(GOOGLE_FORM_URL, '_blank'); 
 //     }
 
 //     return (
@@ -20,7 +24,7 @@
 //             <div 
 //                 className="modal-content" 
 //                 style={{ 
-//                     maxWidth: '850px', // Increased max-width to fit horizontal content
+//                     maxWidth: '850px', 
 //                     padding: '0', 
 //                     backgroundColor: '#fff', 
 //                     zIndex: 1001 
@@ -32,18 +36,17 @@
 //                     <button className="close-button" onClick={onClose}>&times;</button>
 //                 </div>
                 
-//                 {/* FIX: Main Content Container uses Flexbox for horizontal layout */}
 //                 <div 
 //                     style={{ 
 //                         display: 'flex', 
 //                         flexDirection: 'row', 
 //                         padding: '20px', 
-//                         gap: '20px', // Spacing between image and text
-//                         alignItems: 'flex-start' // Align content to the top
+//                         gap: '20px', 
+//                         alignItems: 'flex-start' 
 //                     }}
 //                 >
                     
-//                     {/* Image Container (Takes fixed width or flex-basis) */}
+//                     {/* Image Container */}
 //                     <div className="product-modal-image" style={{ width: '40%', flexShrink: 0 }}>
 //                         <img 
 //                             src={product.image} 
@@ -58,7 +61,7 @@
 //                         />
 //                     </div>
                     
-//                     {/* Text and Button Container (Takes remaining space) */}
+//                     {/* Text and Button Container */}
 //                     <div className="product-modal-info" style={{ width: '60%' }}>
 //                         <h4 style={{ color: '#4A2613', fontSize: '1.4em', marginBottom: '10px', marginTop: '5px' }}>{product.name}</h4> 
                         
@@ -79,10 +82,11 @@
 //                                 zIndex: 10 
 //                             }}
 //                         >
-//                             {/* Inquiry button */}
+//                             {/* Inquiry button now redirects */}
 //                             <button 
 //                                 className="btn-inquiry" 
-//                                 onClick={handleInquiryClick}
+//                                 onClick={handleInquiryRedirect}
+//                                 // Inline styles for button omitted for brevity but should be defined in CSS
 //                             >
 //                                 Inquiry
 //                             </button> 
@@ -93,12 +97,14 @@
 //                                 target="_blank" 
 //                                 rel="noopener noreferrer" 
 //                                 className="btn-whatsapp"
+//                                 // Inline styles for button omitted for brevity but should be defined in CSS
 //                             >
 //                                 WhatsApp
 //                             </a>
 //                         </div>
 //                     </div>
 //                 </div>
+                
 //             </div>
 //         </div>
 //     );

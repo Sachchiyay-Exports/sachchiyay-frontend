@@ -1,6 +1,6 @@
 // // src/components/ProductsListPage.jsx
-// import React, { useState } from 'react'; // Import useState
-// import Modal from './Modal'; // Import the Modal component (assuming it's in the same folder)
+// import React, { useState } from 'react'; 
+// import Modal from './Modal'; // Import the Modal component
 
 // const allProducts = [
 //     { name: "Tumeric Powder", description: "Premium, high-curcumin content turmeric, enhancing both the flavor and health value of any dish.", image: "image/products/tumeric.jpg" },
@@ -33,7 +33,7 @@
 //                         <h4>{product.name}</h4>
 //                         <p style={{ padding: '0 15px 15px' }}>{product.description}</p>
 //                         <div className="card-actions">
-//                             {/* Inquiry button opens the modal */}
+//                             {/* Inquiry button opens the modal, which contains the Google Form */}
 //                             <button className="btn-inquiry" onClick={openModal}>Inquiry</button>
                             
 //                             {/* WhatsApp button redirects with pre-filled message */}
@@ -43,7 +43,7 @@
 //                 ))}
 //             </div>
 
-//             {/* Inquiry Modal Integration */}
+//             {/* Inquiry Modal Integration (Contains Google Form Embed) */}
 //             <Modal isOpen={isModalOpen} onClose={closeModal} />
 //         </section>
 //     );
