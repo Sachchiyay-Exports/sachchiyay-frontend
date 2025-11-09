@@ -60,25 +60,25 @@ const Navbar = () => {
     }
 
     // 8. Helper for anchor scrolling on the Home page (Simplified: Only for internal anchors on home)
-    const handleAnchorLinkClick = (e, targetId) => {
-        // Since About Us is now a dedicated page, this is only needed for future anchors.
-        if (window.location.pathname === '/' && targetId) {
-            e.preventDefault();
+    // const handleAnchorLinkClick = (e, targetId) => {
+    //     // Since About Us is now a dedicated page, this is only needed for future anchors.
+    //     if (window.location.pathname === '/' && targetId) {
+    //         e.preventDefault();
             
-            const targetElement = document.querySelector(targetId);
-            const navbarHeight = 80; 
+    //         const targetElement = document.querySelector(targetId);
+    //         const navbarHeight = 80; 
 
-            if (targetElement) {
-                const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-            }
+    //         if (targetElement) {
+    //             const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+    //             window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    //         }
 
-            // Close sidebar after clicking link on mobile
-            if (window.innerWidth <= 768) {
-                 setIsMenuOpen(false);
-            }
-        }
-    };
+    //         // Close sidebar after clicking link on mobile
+    //         if (window.innerWidth <= 768) {
+    //              setIsMenuOpen(false);
+    //         }
+    //     }
+    // };
 
     return (
         <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
