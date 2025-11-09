@@ -4,7 +4,7 @@ import React from 'react';
 const InquiryForm = () => {
     
     // API Endpoint (Ensure your backend is running on http://localhost:5000)
-    const API_URL = 'http://localhost:5000/api/inquiries';
+    const API_URL = 'https://sachchiyay-api.onrender.com';
 
     // FIX: Define handleSubmit INSIDE the component where the form can access it.
     const handleSubmit = async (event) => {

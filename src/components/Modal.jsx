@@ -5,7 +5,7 @@ const Modal = ({ isOpen, onClose }) => {
     const modalRef = useRef(null);
 
     // API Endpoint (MUST ensure your backend is running on http://localhost:5000)
-    const API_URL = 'http://localhost:5000/api/inquiries';
+    const API_URL = 'https://sachchiyay-api.onrender.com';
 
     // Effect to manage body overflow and close modal on outside click (Correct and maintained)
     useEffect(() => {
