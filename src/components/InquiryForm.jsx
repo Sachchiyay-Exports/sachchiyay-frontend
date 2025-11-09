@@ -3,10 +3,11 @@ import React from 'react';
 
 const InquiryForm = () => {
     
-    // API Endpoint (Ensure your backend is running on http://localhost:5000)
-    const API_URL = 'https://sachchiyay-api.onrender.com';
+    // **FIX 1: Define the API URL using the Render backend service URL.**
+    // We append the endpoint /api/inquiries to this base URL later.
+    // The safest way is to use an environment variable set in Vercel's Dashboard:
+    const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://sachchiyay-api.onrender.com';
 
-    // FIX: Define handleSubmit INSIDE the component where the form can access it.
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -20,19 +21,33 @@ const InquiryForm = () => {
             subject: formData.get('subject') || 'General Website Inquiry',
             remark: formData.get('message'),
         };
+        
+        // **CRITICAL FIX 2: Construct the complete API endpoint URL**
+        // Appending /api/inquiries to the base URL to match your Express route.
+        const endpointUrl = `${API_BASE_URL}/api/inquiries`;
 
         try {
-            const response = await fetch(API_URL, {
+            const response = await fetch(endpointUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),
             });
 
             if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.message || 'Form submission failed on the server.');
+                // Attempt to read the server error response for better debugging
+                const errorText = await response.text();
+                let errorMessage = `Server responded with status: ${response.status}.`;
+                try {
+                    const errorData = JSON.parse(errorText);
+                    errorMessage = errorData.message || errorMessage;
+                } catch {
+                    // If the response is not JSON (e.g., HTML 404 page), use a simpler message
+                    errorMessage = `Backend is inaccessible. Check your API URL or CORS setup.`;
+                }
+                throw new Error(errorMessage);
             }
 
+            // Successfully received response
             const result = await response.json();
             alert(result.message || "Inquiry submitted successfully! Email notification sent.");
             
@@ -40,8 +55,8 @@ const InquiryForm = () => {
 
         } catch (error) {
             console.error('Submission Error:', error);
-            // FIX: Template literal must be wrapped in backticks (`)
-            alert(`Failed to send inquiry: ${error.message}. Ensure your backend is running.`);
+            // Display a user-friendly alert
+            alert(`Failed to send inquiry: ${error.message}.`);
         }
     };
 
@@ -51,6 +66,7 @@ const InquiryForm = () => {
             <hr className="section-divider" />
             <form onSubmit={handleSubmit}>
                 <div className="form-group-half">
+                    {/* Name attributes MUST match keys in handleSubmit: fullName, email, phone, subject, message */}
                     <input type="text" placeholder="Full Name*" name="fullName" required />
                     <input 
                         type="email" 
