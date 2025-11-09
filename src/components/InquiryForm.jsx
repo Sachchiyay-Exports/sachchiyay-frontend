@@ -1,4 +1,3 @@
-const GOOGLE_FORM_URL = https://forms.gle/vm26sTt4ExFc7cYN6'; 
 // src/components/InquiryForm.jsx
 import React from 'react';
 
