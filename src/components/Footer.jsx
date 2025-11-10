@@ -7,6 +7,29 @@ const Footer = () => {
   const whatsappMessage = encodeURIComponent("Hello Sachchiyay Exports, I am interested in your products and would like to place an inquiry.");
   const whatsappLink = `https://wa.me/916353395275?text=${whatsappMessage}`;
 
+const circularIconStyle = {
+    // Set equal dimensions to form a perfect circle
+    width: '40px',
+    height: '40px',
+    
+    // This creates the circular shape
+    borderRadius: '50%',
+    
+    // Ensure the icon is centered inside the circle (using flex)
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    
+    // Set the background color (brown from your contact info)
+    backgroundColor: '#4A2613',
+    
+    // Ensure the text/icon inside is white/light (as per your image)
+    color: '#ffffff', 
+    
+    // Add margin between icons (optional, adjust as needed)
+    marginRight: '10px' 
+};
+
   return (
     <footer className="multi-column-footer">
       <div className="footer-top-section">
@@ -19,16 +42,55 @@ const Footer = () => {
           </div>
           <p>Leading the export of premium organic spices from India, delivering purity, authenticity, and freshness with
             integrity at our core.</p>
-          <div className="footer-social-icons">
-            {/* Social Icons (Already linked) */}
-            <a href="https://www.facebook.com/share/1BePRSLyAY/" className="social-icon" title="Facebook"><i className="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/sachchiyay_exports?igsh=Y3dlc2Y1OTllYzIz" className="social-icon" title="Instagram"><i className="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/sachchiyay-exports-998a5b395?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="social-icon" title="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
-            {/* **Gmail/Email link** */}
-            <a href="mailto:sachchiyayexports@gmail.com" className="social-icon" title="Email"><i className="fas fa-envelope"></i></a>
-            {/* WhatsApp link with message */}
-            <a href={whatsappLink} className="social-icon" title="WhatsApp"><i className="fab fa-whatsapp"></i></a>
-          </div>
+           <div className="footer-social-icons">
+    {/* Social Icons (Already linked) */}
+    <a 
+        href="https://www.facebook.com/share/1BePRSLyAY/" 
+        className="social-icon" 
+        title="Facebook" 
+        style={circularIconStyle} // <-- Apply style here
+    >
+        <i className="fab fa-facebook-f"></i>
+    </a>
+    
+    <a 
+        href="https://www.instagram.com/sachchiyay_exports?igsh=Y3dlc2Y1OTllYzIz" 
+        className="social-icon" 
+        title="Instagram"
+        style={circularIconStyle} // <-- Apply style here
+    >
+        <i className="fab fa-instagram"></i>
+    </a>
+    
+    <a 
+        href="https://www.linkedin.com/in/sachchiyay-exports-998a5b395?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+        className="social-icon" 
+        title="LinkedIn"
+        style={circularIconStyle} // <-- Apply style here
+    >
+        <i className="fab fa-linkedin-in"></i>
+    </a>
+    
+    {/* **Gmail/Email link** */}
+    <a 
+        href="mailto:sachchiyayexports@gmail.com" 
+        className="social-icon" 
+        title="Email"
+        style={circularIconStyle} // <-- Apply style here
+    >
+        <i className="fas fa-envelope"></i>
+    </a>
+    
+    {/* WhatsApp link with message */}
+    <a 
+        href={whatsappLink} 
+        className="social-icon" 
+        title="WhatsApp"
+        style={circularIconStyle} // <-- Apply style here
+    >
+        <i className="fab fa-whatsapp"></i>
+    </a>
+</div>
         </div>
 
         {/* === COLUMN 2: USEFUL PAGES === */}
@@ -93,4 +155,4 @@ const Footer = () => {
   );
 };
 
-export default Footer
+export default Footer;
