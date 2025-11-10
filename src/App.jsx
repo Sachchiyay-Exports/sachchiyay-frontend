@@ -64,7 +64,7 @@ function App() {
           {/* 7. LINKS PAGE (Placeholder) */}
           {/* <Route path="/links" element={<div style={{paddingTop: '100px', minHeight: '80vh', textAlign: 'center'}}></div>} /> */}
 
-          <Route path="/review" element={ // <-- ✅ Corrected: No curly brace here
+          <Route path="/review" element={ 
             <div style={{paddingTop: '100px'}}><ReviewForm isDedicatedPage={true} /></div>
           } />
       </Routes>
