@@ -14,7 +14,7 @@ import Gallery from './components/Gallery';
 import InquiryForm from './components/InquiryForm';
 import ContactDetails from './components/ContactDetails';
 // import ProductsListPage from './components/ProductsListPage'; 
-// import ReviewForm from './components/ReviewForm';
+import ReviewForm from './components/ReviewForm';
 
 function App() {
   return (
@@ -34,7 +34,7 @@ function App() {
               <Gallery />
               <InquiryForm />
               <ContactDetails />
-              {/* <ReviewForm /> */}
+              <ReviewForm />
             </>
           } />
           
@@ -64,9 +64,9 @@ function App() {
           {/* 7. LINKS PAGE (Placeholder) */}
           {/* <Route path="/links" element={<div style={{paddingTop: '100px', minHeight: '80vh', textAlign: 'center'}}></div>} /> */}
 
-          {/* /* { <Route path="/review" element={
+          { <Route path="/review" element={
             <div style={{paddingTop: '100px'}}><ReviewForm isDedicatedPage={true} /></div>
-          } />  */ */}
+          } />
       </Routes>
       </main>
 
