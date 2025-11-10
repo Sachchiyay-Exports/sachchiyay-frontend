@@ -12,13 +12,31 @@ const ContactDetails = () => {
             style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }} />
         </div>
         <div className="contact-info">
-          <h4>Sachchiyay Exports</h4>
-          {/* Using Font Awesome Classes for icons: fas fa-map-marker-alt, fas fa-phone-alt, fas fa-envelope */}
-          <p><i className="fas fa-map-marker-alt"></i> G-3 DADA BHAI CHAMBERS<br /> SARDAR GANJ ANAND 388001</p>
-          <p className="contact-detail">
-            <i className="fas fa-phone-alt" style={{ transform: 'scaleX(-1)' }}></i> +91 6353395275</p>
-          <p><i className="fas fa-envelope"></i> sachchiyayexports@gmail.com</p>
-        </div>
+    <h4>Sachchiyay Exports</h4>
+    
+    <p>
+        <i 
+            className="fas fa-map-marker-alt" 
+            style={{ color: '#4A2613', marginRight: '8px' }} // Added marginRight
+        ></i> 
+        G-3 DADA BHAI CHAMBERS<br /> SARDAR GANJ ANAND 388001
+    </p>
+    
+    <p className="contact-detail">
+        <i 
+            className="fas fa-phone-alt" 
+            style={{ transform: 'scaleX(-1)', color: '#4A2613', marginRight: '8px' }} // Added marginRight
+        ></i> +91 6353395275
+    </p>
+    
+    <p>
+        <i 
+            className="fas fa-envelope" 
+            style={{ color: '#4A2613', marginRight: '8px' }} // Added marginRight
+        ></i> 
+        sachchiyayexports@gmail.com
+    </p>
+</div>
       </div>
     </section>
   );
