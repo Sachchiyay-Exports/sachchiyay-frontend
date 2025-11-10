@@ -15,7 +15,8 @@ const ContactDetails = () => {
           <h4>Sachchiyay Exports</h4>
           {/* Using Font Awesome Classes for icons: fas fa-map-marker-alt, fas fa-phone-alt, fas fa-envelope */}
           <p><i className="fas fa-map-marker-alt"></i> G-3 DADA BHAI CHAMBERS<br /> SARDAR GANJ ANAND 388001</p>
-          <p><i className="fas fa-phone-alt"></i> +91 6353395275</p>
+          <p className="contact-detail">
+            <i className="fas fa-phone-alt" style={{ transform: 'scaleX(-1)' }}></i> +91 6353395275</p>
           <p><i className="fas fa-envelope"></i> sachchiyayexports@gmail.com</p>
         </div>
       </div>
