@@ -20,13 +20,15 @@ const Footer = () => {
           <p>Leading the export of premium organic spices from India, delivering purity, authenticity, and freshness with
             integrity at our core.</p>
           <div className="footer-social-icons">
-            {/* Social Icons (Already linked) */}
-            <a href="https://www.facebook.com/share/1BePRSLyAY/" className="social-icon" title="Facebook"><i className="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/sachchiyay_exports?igsh=Y3dlc2Y1OTllYzIz" className="social-icon" title="Instagram"><i className="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/sachchiyay-exports-998a5b395?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="social-icon" title="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
-            {/* WhatsApp link with message */}
-            <a href={whatsappLink} className="social-icon" title="WhatsApp"><i className="fab fa-whatsapp"></i></a>
-          </div>
+            {/* Social Icons (Already linked) */}
+            <a href="https://www.facebook.com/share/1BePRSLyAY/" className="social-icon" title="Facebook"><i className="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/sachchiyay_exports?igsh=Y3dlc2Y1OTllYzIz" className="social-icon" title="Instagram"><i className="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/sachchiyay-exports-998a5b395?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="social-icon" title="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
+            {/* **Gmail/Email link** */}
+            <a href="mailto:sachchiyayexports@gmail.com" className="social-icon" title="Email"><i className="fas fa-envelope"></i></a>
+            {/* WhatsApp link with message */}
+            <a href={whatsappLink} className="social-icon" title="WhatsApp"><i className="fab fa-whatsapp"></i></a>
+          </div>
         </div>
 
         {/* === COLUMN 2: USEFUL PAGES === */}
@@ -48,7 +50,8 @@ const Footer = () => {
           {/* Contact Icons */}
           <p className="contact-detail"><i className="fas fa-map-marker-alt"></i> G-3 DADA BHAI CHAMBERS, SARDAR GANJ, ANAND
             388001</p>
-          <p className="contact-detail"><i className="fas fa-phone-alt"></i> +91 6353395275</p>
+          <p className="contact-detail">
+            <i className="fas fa-phone-alt" style={{ transform: 'scaleX(-1)' }}></i> +91 6353395275</p>
           <p className="contact-detail"><i className="fas fa-envelope"></i> sachchiyayexports@gmail.com</p>
         </div>
 
