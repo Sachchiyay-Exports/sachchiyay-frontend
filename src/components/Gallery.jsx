@@ -6,17 +6,17 @@ const galleryItems = [
     { 
         imgSrc: "image/gallery/img1.jpg", 
         title: "Tumeric Powder", 
-        description: "Sacchchiyay Spices Turmeric Powder is derived from handpicked turmeric rhizomes, naturally dried and ground to deliver a rich golden color and earthy aroma. Known for its purity and high curcumin content, our turmeric enhances both the flavor and health value of any dish." 
+        description: "Sachchiyay Spices Turmeric Powder is derived from handpicked turmeric rhizomes, naturally dried and ground to deliver a rich golden color and earthy aroma. Known for its purity and high curcumin content, our turmeric enhances both the flavor and health value of any dish." 
     },
     { 
         imgSrc: "image/gallery/img2.jpg", 
         title: "Red Chilli Powder", 
-        description: "Sacchchiyay Spices Red Chilli Powder is made from carefully selected premium-grade dried red chillies, sun-dried and ground to perfection to retain their natural color, aroma, and heat. Known for its rich red hue and fiery flavor, our chilli powder adds the perfect spice and zest to any cuisine worldwide." 
+        description: "Sachchiyay Spices Red Chilli Powder is made from carefully selected premium-grade dried red chillies, sun-dried and ground to perfection to retain their natural color, aroma, and heat. Known for its rich red hue and fiery flavor, our chilli powder adds the perfect spice and zest to any cuisine worldwide." 
     },
     { 
         imgSrc: "image/gallery/img3.png", 
         title: "Garlic Powder", 
-        description: "Sacchchiyay Spices Garlic Powder is crafted from the finest quality garlic cloves, dehydrated and finely ground to preserve its natural pungency and flavor. It serves as a convenient and aromatic substitute for fresh garlic, ideal for seasoning blends, sauces, and instant foods." 
+        description: "Sachchiyay Spices Garlic Powder is crafted from the finest quality garlic cloves, dehydrated and finely ground to preserve its natural pungency and flavor. It serves as a convenient and aromatic substitute for fresh garlic, ideal for seasoning blends, sauces, and instant foods." 
     },
 ];
 
